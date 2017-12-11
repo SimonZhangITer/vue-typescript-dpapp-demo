@@ -1,0 +1,6 @@
+.page@list {
+   .item@ {
+     .icon[src=$imgUrl nav-lazy-src=$imgUrl];
+     div{$name};
+   }
+}
