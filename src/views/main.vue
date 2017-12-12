@@ -16,6 +16,11 @@ export default class App extends Vue {
   // 初始化数据
   msg = 123;
 
+  // 声明周期钩子
+  mounted() {
+    this.greet();
+  }
+
   // 计算属性
   get computedMsg() {
     return "computed " + this.msg;
