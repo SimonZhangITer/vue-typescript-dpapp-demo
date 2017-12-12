@@ -18,7 +18,7 @@ export default class App extends Vue {
 
   // 声明周期钩子
   mounted() {
-    this.greet();
+    // this.greet();
   }
 
   // 计算属性
