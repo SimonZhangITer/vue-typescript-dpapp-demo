@@ -3,6 +3,7 @@
     .city 上海
     .search-wrap 输入商户名、地点
     .user
+       .icon
 </template>
 
 <script lang="ts">
@@ -33,18 +34,32 @@ header {
   text-align: center;
 
   .city {
-    width: 18%;
+    position: relative;
+    width: 20%;
   }
 
   .search-wrap {
-    width: 64%;
+    width: 62%;
+    margin: 10px 0;
+    line-height: 30px;
     color: #b8b8b8;
-    border-radius 25px
-    background-color #FFF
+    border-radius: 25px;
+    background-color: #FFF;
   }
 
   .user {
+    display: flex;
+    justify-content: center;
     width: 18%;
+
+    .icon {
+      background-image: url('//www.dpfile.com/app/app-m-module/static/d53930bbff0bf22cb8cea72503da44d9.png');
+      background-repeat: no-repeat;
+      background-position: left -67px;
+      background-size: 250px;
+      width: 28px;
+      height: 100%;
+    }
   }
 }
 </style>
