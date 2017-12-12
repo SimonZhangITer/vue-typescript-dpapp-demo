@@ -1,24 +1,26 @@
-<template>
-  <div>
-    <input v-model="msg">
-    <p>msg: {{ msg }}</p>
-    <p>computed msg: {{ computedMsg }}</p>
-    <button @click="greet">Greet</button>
-  </div>
+<template lang="pug">
+  .main-wrapper
+      v-header
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
+import { State } from "vuex-class";
+import header from "@/components/header.vue";
 
-@Component
+@Component({
+  components: { "v-header": header }
+})
 export default class App extends Vue {
   // 初始化数据
   msg = 123;
 
+  @State("login") login: Boolean;
+
   // 声明周期钩子
   mounted() {
-    // this.greet();
+    console.log(this.login);
   }
 
   // 计算属性

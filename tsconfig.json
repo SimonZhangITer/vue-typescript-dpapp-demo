@@ -17,6 +17,7 @@
     "allowSyntheticDefaultImports": true,
     // 启用装饰器
     "experimentalDecorators": true,
+    "strictFunctionTypes": false,
     // 允许编译javascript文件
     "allowJs": true,
     // 采用的模块系统

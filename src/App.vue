@@ -7,22 +7,16 @@
 </template>
 
 <script lang="ts">
-
-import Vue from 'vue'
-import Component from 'vue-class-component'
+import Vue from "vue";
+import Component from "vue-class-component";
 
 @Component
-export default class App extends Vue {
-
-}
+export default class App extends Vue {}
 </script>
 
-<style>
-
-#app {
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
-  width: 100%;
+<style lang="stylus">
+body {
+  font-size: 14px;
+  margin: 0;
 }
 </style>
