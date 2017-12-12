@@ -7,11 +7,13 @@ import mutations from './mutations'
 Vue.use(Vuex)
 
 interface State {
-  login: Boolean
+  login: Boolean,
+  modules: Object[],
 }
 
 const state: State = {
-  login: false
+  login: false,
+  modules: []
 }
 
 export default new Vuex.Store({
