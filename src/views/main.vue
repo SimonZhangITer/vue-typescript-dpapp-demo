@@ -4,6 +4,7 @@
     modules
     headline
     board
+    super_sale
 
 </template>
 
@@ -15,13 +16,15 @@ import header from "@/components/header.vue";
 import modules from "@/components/modules.vue";
 import headline from "@/components/headline.vue";
 import board from "@/components/board.vue";
+import super_sale from "@/components/super_sale.vue";
 
 @Component({
   components: {
     "v-header": header,
     modules,
     headline,
-    board
+    board,
+    super_sale
   }
 })
 export default class App extends Vue {
