@@ -19,4 +19,9 @@ body {
   font-size: 14px;
   margin: 0;
 }
+
+.divider {
+  height: 10px;
+  background-color: #f0f0f0;
+}
 </style>

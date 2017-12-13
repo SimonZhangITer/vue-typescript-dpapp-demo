@@ -1,8 +1,10 @@
 <template lang="pug">
   .main-wrapper
-      v-header
-      modules
-      headline
+    v-header
+    modules
+    headline
+    board
+
 </template>
 
 <script lang="ts">
@@ -12,12 +14,14 @@ import { State } from "vuex-class";
 import header from "@/components/header.vue";
 import modules from "@/components/modules.vue";
 import headline from "@/components/headline.vue";
+import board from "@/components/board.vue";
 
 @Component({
   components: {
     "v-header": header,
     modules,
-    headline
+    headline,
+    board
   }
 })
 export default class App extends Vue {
