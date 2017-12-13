@@ -2,6 +2,7 @@
   .main-wrapper
       v-header
       modules
+      headline
 </template>
 
 <script lang="ts">
@@ -10,11 +11,13 @@ import Component from "vue-class-component";
 import { State } from "vuex-class";
 import header from "@/components/header.vue";
 import modules from "@/components/modules.vue";
+import headline from "@/components/headline.vue";
 
 @Component({
   components: {
     "v-header": header,
-     modules
+    modules,
+    headline
   }
 })
 export default class App extends Vue {
@@ -26,16 +29,6 @@ export default class App extends Vue {
   // 声明周期钩子
   mounted() {
     console.log(this.login);
-  }
-
-  // 计算属性
-  get computedMsg() {
-    return "computed " + this.msg;
-  }
-
-  // 方法
-  greet() {
-    alert("greeting: " + this.msg);
   }
 }
 </script>

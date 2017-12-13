@@ -2,7 +2,7 @@
   swiper.modules(:options="swiperOption")
     swiper-slide.page(v-for="(page,index) in modules" :key="index")
       .module(v-for="module in page" :key="module.name")
-        img(:src="module.imgUrl")
+        img(v-lazy="module.imgUrl")
         .name {{module.name}}
     .swiper-pagination(slot="pagination")
 </template>
@@ -10,7 +10,7 @@
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
-import slides from "@/assets/mock/slides.js";
+import slides from "../assets/mock/slides.js";
 import "swiper/dist/css/swiper.css";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 
@@ -32,9 +32,9 @@ export default class modules extends Vue {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 .modules {
-  padding-bottom: 22px;
+  padding-bottom: 25px;
 
   .page {
     .module {
@@ -54,8 +54,12 @@ export default class modules extends Vue {
     }
   }
 
-  .swiper-pagination span {
-    background: #f5734b;
+  .swiper-pagination {
+    bottom: 3px;
+
+    span {
+      background: #f5734b;
+    }
   }
 }
 </style>
