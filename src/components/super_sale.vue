@@ -10,9 +10,9 @@
             img(:src="item.imgUrl" width="100%")
             .title {{item.title}}
             .price-wrap
-              .price.now {{item.price_current}}
-              .price.old(v-cloak) {{item.price_old}}
-              .cutdown(v-cloak) {{item.price_down}}
+              span.price.now {{item.price_current}}
+              span.price.old {{item.price_old}}
+              span.cutdown {{item.price_down}}
       .divider
 
 </template>
@@ -68,6 +68,50 @@ export default class SuperSale extends Vue {
       }
 
       .price-wrap {
+        position: relative;
+
+        .price {
+          &.now {
+            color: #f63;
+            font-size: 20px;
+          }
+
+          &.old {
+            color: #999;
+            font-size: 12px;
+            padding-left: 6px;
+            text-decoration: line-through;
+          }
+
+          &::before {
+            content: '\A5';
+            font-size: 14px;
+            padding-right: 4px;
+          }
+
+          &:empty {
+            display: none;
+          }
+        }
+
+        .cutdown {
+          position: absolute;
+          top: 5px;
+          padding: 1px 3px;
+          border-radius: 2px;
+          color: #f63;
+          font-size: 12px;
+          border: 1px solid #ff9470;
+          max-width: 60px;
+          transform: scale(0.75);
+          margin-left: -3px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          &:empty {
+            display: none;
+          }
+        }
       }
     }
   }
