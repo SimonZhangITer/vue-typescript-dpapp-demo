@@ -1,25 +1,27 @@
 <template lang="pug">
-  swiper.modules(:options="swiperOption")
-    swiper-slide.page(v-for="(page,index) in modules" :key="index")
-      .module(v-for="module in page" :key="module.name")
-        img(:src="module.imgUrl")
-        .name {{module.name}}
-    .swiper-pagination(slot="pagination")
+  .headline-wrap
+    .logo
+    swiper.headline(:options="swiperOption")
+      swiper-slide.article(v-for="(item,index) in articles" :key="index")
+        .title {{item.title}}
+        img(:src="")
+        .img-count
+      .swiper-pagination(slot="pagination")
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
-import slides from "@/assets/mock/slides.js";
+import headline from "@/assets/mock/headline.js";
 import "swiper/dist/css/swiper.css";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 
 @Component({
-  name: "modules",
+  name: "headline",
   components: { swiper, swiperSlide }
 })
 export default class modules extends Vue {
-  modules: Object[] = slides.list;
+  articles: Object[] = headline.list;
   swiperOption: Object = {
     pagination: {
       el: ".swiper-pagination",
@@ -27,7 +29,7 @@ export default class modules extends Vue {
     }
   };
   mounted() {
-    console.log(this.modules);
+    console.log(this.articles);
   }
 }
 </script>

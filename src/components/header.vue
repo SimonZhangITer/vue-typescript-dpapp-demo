@@ -24,7 +24,7 @@ export default class header extends Vue {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 header {
   display: flex;
   height: 50px;
