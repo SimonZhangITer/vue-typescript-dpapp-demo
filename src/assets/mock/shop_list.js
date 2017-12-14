@@ -38,6 +38,7 @@ export default {
       'distance': '422m',
       'desc': '[218店通用] 【官方】正新鸡排单人餐',
       'price_current': '10.9',
+      'price_cutdown': '新客减9.5',
       'sale_count': '已售197971'
     },
     {
@@ -97,7 +98,8 @@ export default {
       'distance': '454m',
       'desc': '[21店通用] 鱼香茄子饭+金杏蜜桃汁1份',
       'price_current': '17',
-      'sale_count': '已售9063'
+      'sale_count': '已售9063',
+      'price_cutdown': '新客减10.5'
     }
   ]
 }

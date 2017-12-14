@@ -5,7 +5,7 @@
     headline
     board
     super_sale
-
+    shop_list
 </template>
 
 <script lang="ts">
@@ -17,6 +17,7 @@ import modules from "@/components/modules.vue";
 import headline from "@/components/headline.vue";
 import board from "@/components/board.vue";
 import super_sale from "@/components/super_sale.vue";
+import shop_list from "@/components/shops.vue";
 
 @Component({
   components: {
@@ -24,7 +25,8 @@ import super_sale from "@/components/super_sale.vue";
     modules,
     headline,
     board,
-    super_sale
+    super_sale,
+    shop_list
   }
 })
 export default class App extends Vue {

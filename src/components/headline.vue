@@ -71,7 +71,7 @@ export default class modules extends Vue {
       align-items: center;
 
       .title {
-        font-weight bold
+        font-weight: bold;
         width: 81%;
         padding: 0 10px;
         box-sizing: border-box;

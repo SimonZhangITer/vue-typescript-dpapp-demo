@@ -11,7 +11,7 @@ interface State {
   modules: Object[],
 }
 
-const state: State = {
+let state: State = {
   login: false,
   modules: []
 }
