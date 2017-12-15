@@ -3,17 +3,18 @@
     v-header
     .content-wrapper
       modules
-      headline
-      board
-      super_sale
-      shop_list
-    .loading
+      div(v-if="load")
+        headline
+        board
+        super_sale
+        shop_list
+      .loading(v-else)
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
-import { State, Action } from "vuex-class";
+import { State, Action, Getter } from "vuex-class";
 import header from "@/components/header.vue";
 import modules from "@/components/modules.vue";
 import headline from "@/components/headline.vue";
@@ -34,6 +35,7 @@ import shop_list from "@/components/shops.vue";
 export default class App extends Vue {
   @State login: boolean;
   @Action initAjax: () => void;
+  @Getter load: boolean;
 
   get isLogin(): boolean {
     return this.login;

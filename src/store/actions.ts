@@ -6,13 +6,11 @@ import TYPES from './types'
 const actions: ActionTree<any, any> = {
   // ajax 初始化
   async initAjax({ dispatch }) {
-    Promise.all([
-      dispatch('getModules'),
-      dispatch('getHeadline'),
-      dispatch('getActivity'),
-      dispatch('getSuperSale'),
-      dispatch('getShops')
-    ])
+    dispatch('getModules')
+    dispatch('getHeadline')
+    setTimeout(() => dispatch('getActivity'), 2000)
+    dispatch('getSuperSale')
+    dispatch('getShops')
   },
   // 获取modules
   async getModules({ state, commit }) {
