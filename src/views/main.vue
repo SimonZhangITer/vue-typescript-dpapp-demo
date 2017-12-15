@@ -39,10 +39,7 @@ export default class App extends Vue {
     return this.$store.state.login;
   }
   // 声明周期钩子
-  mounted() {
-    // this.getList('2');
-    console.log(this.$store.dispatch("getList"));
-  }
+  mounted() {}
 }
 </script>
 

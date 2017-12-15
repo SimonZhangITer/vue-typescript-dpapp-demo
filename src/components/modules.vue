@@ -13,20 +13,24 @@ import Component from "vue-class-component";
 import slides from "../assets/mock/slides.js";
 import "swiper/dist/css/swiper.css";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
+import { State, Action } from "vuex-class";
 
 @Component({
   name: "modules",
   components: { swiper, swiperSlide }
 })
 export default class modules extends Vue {
-  modules: Object[] = slides.list;
-  swiperOption: Object = {
+  @State modules: StoreState.module[];
+  @Action getModules: () => void;
+
+  private swiperOption: Object = {
     pagination: {
       el: ".swiper-pagination",
       clickable: true
     }
   };
   mounted() {
+    this.getModules();
   }
 }
 </script>
