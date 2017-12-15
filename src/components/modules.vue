@@ -10,7 +10,6 @@
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
-import slides from "../assets/mock/slides.js";
 import "swiper/dist/css/swiper.css";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 import { State, Action } from "vuex-class";

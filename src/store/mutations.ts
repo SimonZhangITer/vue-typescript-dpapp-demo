@@ -7,6 +7,15 @@ const mutations: MutationTree<any> = {
   },
   [TYPES.SET_HEADLINE](state, headline): void {
     state.headline = headline
-  }
+  },
+  [TYPES.SET_ACTIVITIES](state, activities): void {
+    state.activities = activities
+  },
+  [TYPES.SET_SUPER_SALE](state, superSales): void {
+    state.superSales = superSales
+  },
+  [TYPES.SET_SHOPS](state, shops): void {
+    state.shops = shops
+  },
 }
 export default mutations

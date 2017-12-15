@@ -1,6 +1,6 @@
 <template lang="pug">
   .sales-wrap
-    .wrap(v-for="(saleItem,index) in sales" :key="index")
+    .wrap(v-for="(saleItem,index) in superSales" :key="index")
       .sale-item
         .title-wrap
           .titleIcon
@@ -19,10 +19,11 @@
  <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
-import sales from "../assets/mock/super_sale";
+import { State } from "vuex-class";
 
+@Component
 export default class SuperSale extends Vue {
-  sales: Object[] = sales.list;
+  @State superSales: StoreState.superSale[];
 }
 </script>
 
@@ -108,6 +109,7 @@ export default class SuperSale extends Vue {
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
+
           &:empty {
             display: none;
           }

@@ -1,7 +1,7 @@
 <template lang="pug">
   .board-wrap
     .divider
-    .wrap(v-for="(board,index) in boards" :key="index")
+    .wrap(v-for="(board,index) in activities" :key="index")
       .board
         .item(v-for="item in board" :key="item.imgUrl")
           .cnt
@@ -14,11 +14,11 @@
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
-import board from "../assets/mock/board";
+import { State } from "vuex-class";
 
 @Component
 export default class Board extends Vue {
-  boards: Object[] = board.list;
+  @State activities: StoreState.activity[]
 }
 </script>
 
@@ -36,6 +36,7 @@ export default class Board extends Vue {
 
       .cnt {
         flex: 1;
+
         .title {
           font-size: 16px;
         }
@@ -73,7 +74,7 @@ export default class Board extends Vue {
         background-color: #f97e54;
         transform: scale(0.9);
         color: #e6e6e6;
-        text-align center
+        text-align: center;
       }
     }
 

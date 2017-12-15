@@ -12,7 +12,6 @@
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
-import headline from "../assets/mock/headline.js";
 import "swiper/dist/css/swiper.css";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 import { State } from "vuex-class";

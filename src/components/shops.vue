@@ -20,11 +20,11 @@
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
-import shops from "../assets/mock/shop_list";
+import { State } from "vuex-class";
 
 @Component
 export default class Shops extends Vue {
-  shops: Object[] = shops.list;
+  @State shops: StoreState.shop[];
 }
 </script>
 
