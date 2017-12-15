@@ -1,7 +1,9 @@
 <template lang="pug">
   header
     .city 上海
-    .search-wrap(ref="search") 输入商户名、地点
+    .search-wrap(ref="search")
+      span(ref="placeholder" v-show="!searchValue.length") 输入商户名、地点
+      input(@focus="onfocus" @blur="onBlur" ref="input" v-model="searchValue")
     .user
        .icon
 </template>
@@ -12,24 +14,37 @@ import Component from "vue-class-component";
 
 @Component
 export default class header extends Vue {
-  city: string = "shanghai";
+  searchValue: string = "";
 
   mounted() {
+    this.onChangeSize();
+  }
+
+  onfocus(): void {
+    const TRANS_X: string = "translateX(15px)";
+    const LEFT: string = "0";
+    const placeholder: any = this.$refs.placeholder;
+    placeholder.style.left = LEFT;
+    placeholder.style.transform = TRANS_X;
+  }
+
+  onBlur(): void {
+    const placeholder: any = this.$refs.placeholder;
+    placeholder.removeAttribute("style");
+  }
+
+  onChangeSize(): void {
     window.addEventListener("scroll", (e: any) => {
       const TRANS_HEIGHT: number = 10;
       const BIG_WIDTH: string = "90%";
-      const NORMAL_WIDTH: string = "60%";
       let scrollY: number = window.scrollY;
       let el_search: any = this.$refs.search;
-
+      let input: any = this.$refs.input;
+      if (input) input.blur();
       if (!el_search) return;
       if (scrollY > TRANS_HEIGHT) el_search.style.width = BIG_WIDTH;
-      else el_search.style.width = NORMAL_WIDTH;
+      else el_search.removeAttribute("style");
     });
-  }
-
-  showCity(): void {
-    console.log(this.city);
   }
 }
 </script>
@@ -60,11 +75,35 @@ header {
     right: 0;
     top: 10px;
     margin: auto;
+    height: 30px;
     line-height: 30px;
     color: #b8b8b8;
     border-radius: 25px;
     background-color: #FFF;
     transition: width 0.1s ease;
+
+    span {
+      display: inline-block;
+      position: absolute;
+      width: 120px;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: all 0.2s ease;
+    }
+
+    input {
+      position: absolute;
+      left: 15px;
+      padding: 0;
+      margin: 0;
+      width: 90%;
+      color: #999;
+      background: none;
+      border: none;
+      height: 30px;
+      outline: none;
+      caret-color: #f63;
+    }
   }
 
   .user {
