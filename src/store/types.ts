@@ -1,3 +1,4 @@
 export default {
   SET_MODULES: 'SET_MODULES',
+  SET_HEADLINE: 'SET_HEADLINE',
 }

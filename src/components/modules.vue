@@ -21,7 +21,6 @@ import { State, Action } from "vuex-class";
 })
 export default class modules extends Vue {
   @State modules: StoreState.module[];
-  @Action getModules: () => void;
 
   private swiperOption: Object = {
     pagination: {
@@ -29,9 +28,6 @@ export default class modules extends Vue {
       clickable: true
     }
   };
-  mounted() {
-    this.getModules();
-  }
 }
 </script>
 

@@ -2,7 +2,7 @@
   .headline-wrap
     .logo(@click="logoClick")
     swiper.headline(:options="swiperOption")
-      swiper-slide.article(v-for="(item,index) in articles" :key="index")
+      swiper-slide.article(v-for="(item,index) in headline" :key="index")
         .title {{item.title}}
         .img-wrap
           img(:src="item.imgUrl")
@@ -23,16 +23,13 @@ import { State } from "vuex-class";
 })
 export default class modules extends Vue {
   @State login: boolean;
+  @State headline: StoreState.headline[];
 
-  articles: Object[] = headline.list;
-  swiperOption: Object = {
+  private swiperOption: Object = {
     autoplay: true,
     loop: true,
     direction: "vertical"
   };
-  mounted(): void {
-    console.log(this.login);
-  }
 
   logoClick(): void {
     alert("点我干嘛");

@@ -32,14 +32,16 @@ import shop_list from "@/components/shops.vue";
   }
 })
 export default class App extends Vue {
-  @State login: Boolean;
-  @Action getList: (str: string) => void;
+  @State login: boolean;
+  @Action initAjax: () => void;
 
-  get isLogin(): string {
-    return this.$store.state.login;
+  get isLogin(): boolean {
+    return this.login;
   }
   // 声明周期钩子
-  mounted() {}
+  mounted() {
+    this.initAjax();
+  }
 }
 </script>
 
