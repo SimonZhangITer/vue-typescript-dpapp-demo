@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex, { ActionTree, MutationTree } from 'vuex'
 import actions from './actions'
 import mutations from './mutations'
+import getters from './getters'
 // import 'babel-polyfill'
 
 Vue.use(Vuex)
@@ -27,5 +28,6 @@ let state: State = {
 export default new Vuex.Store({
   state,
   actions,
+  getters,
   mutations
 })
