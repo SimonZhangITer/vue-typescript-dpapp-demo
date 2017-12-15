@@ -6,7 +6,7 @@ declare namespace StoreState {
   }
 
   // 顶部可左右滑动模块
-  export interface modules {
+  export interface module {
     // 点击跳转链接
     url: string,
     // 图片链接
@@ -30,7 +30,7 @@ declare namespace StoreState {
   }
 
   // 活动特惠
-  export interface activities {
+  export interface activity {
     // 活动标题
     title: string,
     // 活动描述
@@ -54,7 +54,7 @@ declare namespace StoreState {
   }
 
   // 商户
-  export interface shops {
+  export interface shop {
     // 商户跳转链接
     url: string,
     // 商户图片链接

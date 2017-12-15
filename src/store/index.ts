@@ -8,18 +8,24 @@ Vue.use(Vuex)
 
 interface State {
   login: Boolean,
-  modules: Object[],
-  count: number
+  modules: StoreState.module[],
+  headline: StoreState.headline[],
+  activities: StoreState.activity[],
+  superSales: StoreState.superSale[],
+  shops: StoreState.shop[]
 }
 
 let state: State = {
   login: false,
   modules: [],
-  count: 0
+  headline: [],
+  activities: [],
+  superSales: [],
+  shops: []
 }
 
 export default new Vuex.Store({
   state,
   actions,
-  mutations,
+  mutations
 })
