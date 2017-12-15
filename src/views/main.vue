@@ -1,11 +1,12 @@
 <template lang="pug">
   .main-wrapper
     v-header
-    modules
-    headline
-    board
-    super_sale
-    shop_list
+    .content-wrapper
+      modules
+      headline
+      board
+      super_sale
+      shop_list
 </template>
 
 <script lang="ts">
@@ -46,3 +47,9 @@ export default class App extends Vue {
   }
 }
 </script>
+
+<style lang="stylus">
+.content-wrapper {
+  padding-top: 50px;
+}
+</style>
