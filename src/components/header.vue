@@ -1,7 +1,7 @@
 <template lang="pug">
   header
     .city 上海
-    .search-wrap 输入商户名、地点
+    .search-wrap(ref="search") 输入商户名、地点
     .user
        .icon
 </template>
@@ -15,7 +15,17 @@ export default class header extends Vue {
   city: string = "shanghai";
 
   mounted() {
-    this.showCity();
+    window.addEventListener("scroll", (e: any) => {
+      const TRANS_HEIGHT: number = 10;
+      const BIG_WIDTH: string = "90%";
+      const NORMAL_WIDTH: string = "60%";
+      let scrollY: number = window.scrollY;
+      let el_search: any = this.$refs.search;
+
+      if (!el_search) return;
+      if (scrollY > TRANS_HEIGHT) el_search.style.width = BIG_WIDTH;
+      else el_search.style.width = NORMAL_WIDTH;
+    });
   }
 
   showCity(): void {
@@ -54,6 +64,7 @@ header {
     color: #b8b8b8;
     border-radius: 25px;
     background-color: #FFF;
+    transition: width 0.1s ease;
   }
 
   .user {
