@@ -7,6 +7,7 @@
       board
       super_sale
       shop_list
+    .loading
 </template>
 
 <script lang="ts">
@@ -31,9 +32,6 @@ import shop_list from "@/components/shops.vue";
   }
 })
 export default class App extends Vue {
-  // 初始化数据
-  msg = 123;
-
   @State login: Boolean;
   @Action getList: (str: string) => void;
 
@@ -51,5 +49,11 @@ export default class App extends Vue {
 <style lang="stylus">
 .content-wrapper {
   padding-top: 50px;
+}
+
+.loading {
+  background: url('//www.dpfile.com/app/app-m-module/static/6261145dd7c0f26bc0a26831e5cb358a.gif') center 30px no-repeat #fff;
+  background-size: 90px;
+  height: 300px;
 }
 </style>

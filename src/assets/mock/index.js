@@ -1,12 +1,11 @@
 import Mock from 'mockjs'
+import modules from './slides'
 
-Mock.mock('/list', 'get', (options) => {
+Mock.mock('/modules', 'get', (options) => {
   return {
     code: 200,
     result: {
-      arr: [1, 2, 3],
-      str: 'test'
+      list: modules
     }
   }
 })
-console.log('mock js')

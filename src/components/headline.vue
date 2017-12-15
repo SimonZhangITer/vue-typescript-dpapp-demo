@@ -1,6 +1,6 @@
 <template lang="pug">
   .headline-wrap
-    .logo
+    .logo(@click="logoClick")
     swiper.headline(:options="swiperOption")
       swiper-slide.article(v-for="(item,index) in articles" :key="index")
         .title {{item.title}}
@@ -30,8 +30,12 @@ export default class modules extends Vue {
     loop: true,
     direction: "vertical"
   };
-  mounted() {
+  mounted(): void {
     console.log(this.login);
+  }
+
+  logoClick(): void {
+    alert("点我干嘛");
   }
 }
 </script>
