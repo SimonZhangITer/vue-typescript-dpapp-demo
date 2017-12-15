@@ -27,7 +27,6 @@ export default class modules extends Vue {
     }
   };
   mounted() {
-    console.log(this.modules);
   }
 }
 </script>

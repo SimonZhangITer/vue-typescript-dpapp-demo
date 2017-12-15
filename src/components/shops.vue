@@ -46,8 +46,8 @@ export default class Shops extends Vue {
         position: relative;
 
         .tag {
-          position absolute
-          top 0
+          position: absolute;
+          top: 0;
           font-size: 12px;
           transform: scale(0.98);
           padding: 3px 7px;

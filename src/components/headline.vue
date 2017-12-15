@@ -15,12 +15,15 @@ import Component from "vue-class-component";
 import headline from "../assets/mock/headline.js";
 import "swiper/dist/css/swiper.css";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
+import { State } from "vuex-class";
 
 @Component({
   name: "headline",
   components: { swiper, swiperSlide }
 })
 export default class modules extends Vue {
+  @State login: boolean;
+
   articles: Object[] = headline.list;
   swiperOption: Object = {
     autoplay: true,
@@ -28,7 +31,7 @@ export default class modules extends Vue {
     direction: "vertical"
   };
   mounted() {
-    console.log(this.articles);
+    console.log(this.login);
   }
 }
 </script>

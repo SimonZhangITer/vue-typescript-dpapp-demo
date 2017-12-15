@@ -9,11 +9,13 @@ Vue.use(Vuex)
 interface State {
   login: Boolean,
   modules: Object[],
+  count: number
 }
 
 let state: State = {
   login: false,
-  modules: []
+  modules: [],
+  count: 0
 }
 
 export default new Vuex.Store({

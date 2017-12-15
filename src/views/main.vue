@@ -11,7 +11,7 @@
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
-import { State } from "vuex-class";
+import { State, Action } from "vuex-class";
 import header from "@/components/header.vue";
 import modules from "@/components/modules.vue";
 import headline from "@/components/headline.vue";
@@ -33,11 +33,16 @@ export default class App extends Vue {
   // 初始化数据
   msg = 123;
 
-  @State("login") login: Boolean;
+  @State login: Boolean;
+  @Action getList: (str: string) => void;
 
+  get isLogin(): string {
+    return this.$store.state.login;
+  }
   // 声明周期钩子
   mounted() {
-    console.log(this.login);
+    // this.getList('2');
+    console.log(this.$store.dispatch("getList"));
   }
 }
 </script>
