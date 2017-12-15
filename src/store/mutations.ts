@@ -17,5 +17,8 @@ const mutations: MutationTree<any> = {
   [TYPES.SET_SHOPS](state, shops): void {
     state.shops = shops
   },
+  [TYPES.SET_SEARCH_VAL](state, val): void {
+    state.searchVal = val
+  }
 }
 export default mutations

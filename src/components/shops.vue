@@ -2,7 +2,7 @@
   .shop-list-wrap
     .head 猜你喜欢
     .shop-list
-      .shop(v-for="shop in shops" :key="shop.url")
+      .shop(v-for="shop in shopList" :key="shop.url")
         .shop-logo
           img(v-lazy="shop.imgUrl" width="90px" height="90px")
           .tag 免预约
@@ -25,6 +25,15 @@ import { State } from "vuex-class";
 @Component
 export default class Shops extends Vue {
   @State shops: StoreState.shop[];
+  @State searchVal: string;
+
+  get shopList(): StoreState.shop[] {
+    const shops = this.shops;
+    const searchVal = this.searchVal;
+    return shops.filter(
+      (el: StoreState.shop) => el.shopName.indexOf(searchVal) > -1
+    );
+  }
 }
 </script>
 

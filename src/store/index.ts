@@ -13,7 +13,8 @@ interface State {
   headline: StoreState.headline[],
   activities: StoreState.activity[],
   superSales: StoreState.superSale[],
-  shops: StoreState.shop[]
+  shops: StoreState.shop[],
+  searchVal: string
 }
 
 let state: State = {
@@ -22,7 +23,8 @@ let state: State = {
   headline: [],
   activities: [],
   superSales: [],
-  shops: []
+  shops: [],
+  searchVal: ''
 }
 
 export default new Vuex.Store({

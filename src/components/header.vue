@@ -2,8 +2,8 @@
   header
     .city 上海
     .search-wrap(ref="search")
-      span(ref="placeholder" v-show="!searchValue.length") 输入商户名、地点
-      input(@focus="onfocus" @blur="onBlur" ref="input" v-model="searchValue")
+      span(ref="placeholder" v-if="!searchValue") 输入商户名、地点
+      input(@input="onValueChange" @focus="onfocus" @blur="onBlur" ref="input" v-model="searchValue")
     .user
        .icon
 </template>
@@ -11,35 +11,44 @@
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
+import { Action } from "vuex-class";
 
 @Component
 export default class header extends Vue {
+  @Action setSearchVal: (val: string) => void;
+
   searchValue: string = "";
 
   mounted() {
     this.onChangeSize();
   }
 
+  onValueChange() {
+    const val: string = this.searchValue;
+    this.setSearchVal(val);
+  }
+
   onfocus(): void {
     const TRANS_X: string = "translateX(15px)";
     const LEFT: string = "0";
     const placeholder: any = this.$refs.placeholder;
+    if (!placeholder) return;
     placeholder.style.left = LEFT;
     placeholder.style.transform = TRANS_X;
   }
 
   onBlur(): void {
     const placeholder: any = this.$refs.placeholder;
-    placeholder.removeAttribute("style");
+    if (placeholder) placeholder.removeAttribute("style");
   }
 
   onChangeSize(): void {
     window.addEventListener("scroll", (e: any) => {
       const TRANS_HEIGHT: number = 10;
       const BIG_WIDTH: string = "90%";
-      let scrollY: number = window.scrollY;
-      let el_search: any = this.$refs.search;
-      let input: any = this.$refs.input;
+      const scrollY: number = window.scrollY;
+      const el_search: any = this.$refs.search;
+      const input: any = this.$refs.input;
       if (input) input.blur();
       if (!el_search) return;
       if (scrollY > TRANS_HEIGHT) el_search.style.width = BIG_WIDTH;

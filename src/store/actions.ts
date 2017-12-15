@@ -37,6 +37,10 @@ const actions: ActionTree<any, any> = {
     const res: Ajax.AjaxResponse = await axios.get('/shops').then((res) => res.data).catch((e: string) => console.error(e))
     if (res && res.code == 200) commit(TYPES.SET_SHOPS, res.result.list)
   },
+  // 更新搜索内容
+  setSearchVal({ commit }, val: string) {
+    commit(TYPES.SET_SEARCH_VAL, val)
+  }
 }
 
 export default actions
