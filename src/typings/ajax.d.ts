@@ -23,6 +23,6 @@ declare namespace Ajax {
      * 消息
      * @type { string }
      */
-    message: string
+    message?: string
   }
 }

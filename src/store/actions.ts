@@ -2,7 +2,6 @@ import { ActionTree } from 'vuex'
 import axios from 'axios'
 import TYPES from './types'
 
-
 const actions: ActionTree<any, any> = {
   // ajax 初始化
   async initAjax({ dispatch }) {
