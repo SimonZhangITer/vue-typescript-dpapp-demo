@@ -1,4 +1,3 @@
-# Vue with TypeScript
 
 <div align=center>
     <img src="https://p1.meituan.net/dpgroup/60168751a8f4a79ca3c59edffdde00e423571.jpg" width="92"/>

@@ -2,7 +2,7 @@
   "name": "vue-typecript-dpapp-demo",
   "version": "1.0.0",
   "description": "a typeScript vue.js demo",
-  "author": "张韧 <zhangren@meituan.com>",
+  "author": "SimonZhang <zhangren@meituan.com>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
