@@ -1,6 +1,6 @@
 # Vue with TypeScript
 
-<div style="width:100%;text-align:center">
+<div align=center>
     <img src="https://p1.meituan.net/dpgroup/60168751a8f4a79ca3c59edffdde00e423571.jpg" width="92"/>
     <img src="https://p0.meituan.net/dpgroup/4a48f7ad4e6231c12c44b3422d67008116085.jpg" width="80"/>
 </div>
