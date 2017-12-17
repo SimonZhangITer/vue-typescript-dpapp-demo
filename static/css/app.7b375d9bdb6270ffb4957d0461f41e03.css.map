@@ -1,0 +1,1 @@
+{"version":3,"sources":["app.7b375d9bdb6270ffb4957d0461f41e03.css"],"names":[],"mappings":"AACA,KACE,eAAgB,AAChB,QAAU,CACX,AACD,SACE,YAAa,AACb,wBAA0B,CAC3B","file":"app.7b375d9bdb6270ffb4957d0461f41e03.css","sourcesContent":["\nbody {\n  font-size: 14px;\n  margin: 0;\n}\n.divider {\n  height: 10px;\n  background-color: #f0f0f0;\n}"]}
