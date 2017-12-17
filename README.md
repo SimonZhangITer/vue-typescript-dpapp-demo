@@ -1,6 +1,9 @@
-# vue-typecript-dpapp-demo
+# Vue with TypeScript
 
-> 最近研究TypeScript，感觉非常不错，写了个Demo和大家分享一下心得
+<div style="text-align:center">
+    <img src="https://p1.meituan.net/dpgroup/60168751a8f4a79ca3c59edffdde00e423571.jpg" width="92"/>
+    <img src="https://p0.meituan.net/dpgroup/4a48f7ad4e6231c12c44b3422d67008116085.jpg" width="80"/>
+</div>
 
 ## 功能
 
@@ -176,7 +179,7 @@ declare module '*.vue' {
 
 解决办法：在`src/typings`目前下建一个`tools.d.ts`文件，声明这个模块即可
 
-```
+```javascript
 declare module 'vue-awesome-swiper' {
   export const swiper: any
   export const swiperSlide: any
@@ -188,7 +191,7 @@ declare module 'vue-lazyload'
 ### 对vuex的支持不是很好
 在TypeScript里面使用不了mapState、mapGetters等方法，只能一个变量一个变量的去引用，这个要麻烦不少。不过使用`vuex-class`库之后，写法上也还算简洁美观
 
-```
+```javascript
 export default class modules extends Vue {
   @State login: boolean; // 对应this.$store.state.login
   @State headline: StoreState.headline[]; // 对应this.$store.state.headline
