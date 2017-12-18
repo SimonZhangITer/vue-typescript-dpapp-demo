@@ -21,7 +21,7 @@
 - [x] mock数据
 - [x] tsconfig.json
 - [x] webpack配置
-- [] vue-typecript-cli
+- [ ] vue-typecript-cli
 
 ## 完成后的简单例子
 基于类的写法加上静态类型检查，简直不能再嗨
