@@ -40,7 +40,7 @@ export default class App extends Vue {
   get isLogin(): boolean {
     return this.login;
   }
-  // 声明周期钩子
+
   mounted() {
     this.initAjax();
   }
