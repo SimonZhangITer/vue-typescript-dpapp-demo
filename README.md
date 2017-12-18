@@ -342,7 +342,11 @@ export default class modules extends Vue {
 ```
 
 # 项目截图
-<img src="https://p0.meituan.net/dpgroup/889e640252e38fcc5f97615bad528e435662017.gif" autoplay loop/>
+<div align=center>
+    <img src="https://p1.meituan.net/dpgroup/ffe7312edf899bdaa71e42ae2cff7293124895.png" width="266"/>
+    <img src="https://p1.meituan.net/dpgroup/2ba7ac68cb3bcef937e48a9fcfb64ca7534292.png" width="266"/>
+    <img src="https://p1.meituan.net/dpgroup/e9bd7a0e31f02cb0c7f5699deaccd6ac504928.png" width="266"/>
+</div>
 
 # 总结
 TypeScript还是非常值得学习和使用一个语言，还是有很多优点的
