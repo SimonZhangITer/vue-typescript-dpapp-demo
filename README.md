@@ -21,7 +21,7 @@
 - [x] mock数据
 - [x] tsconfig.json
 - [x] webpack配置
-- [ ] vue-typescript-cli
+- [x] <b>vue-typescript-cli</b>
 
 ## 完成后的简单例子
 基于类的写法加上静态类型检查，简直不能再嗨
@@ -50,33 +50,54 @@ export default class Shops extends Vue {
 
 # 为什么使用TypeScript
 
-### JavaScript的超集
+### 1. JavaScript的超集
 支持所有原生JavaScript的语法
-### 强类型语言
+### 2. 强类型语言
 现在很多主流语言都是强类型的，而这点也一直是JavaScript所被人诟病的地方。使用TypeScript之后，将会在代码调试、重构等步骤节省很多时间。
 
 > 比如说：函数在返回值的时候可能经过复杂的操作，那我们如果想要知道这个值的结构就需要去仔细阅读这段代码。那如果有了TypeScript之后，直接就可以看到函数的返回值结构，将会非常的方便
 
-### 强大的IDE支持
+### 3. 强大的IDE支持
 现在的主流编辑器如`VSCode`、`WebStorm`、`Atom`、`Sublime`等都对TypeScript有着非常友好的支持，主要体现在智能提示上，非常的方便
-### 可运行于任何浏览器、计算机、操作系统
+### 4. 可运行于任何浏览器、计算机、操作系统
 强大的编译引擎
-### 迭代更新快
+### 5. 迭代更新快
 不断更新，提供更加方便友好的Api
-### 微软和Google爸爸
+### 6. 微软和Google爸爸
 TypeScript是微软开发的语言，而Google的`Angular`使用的就是TypeScript，所以不用担心会停止维护，至少在近几年内TypeScript都会一门主流开发语言
-### npm下载量非常高
+### 7. npm下载量非常高
 截止2017.12.17, TypeScript在全球范围内的npm日均下载量在`30w`左右，这个数字将近是vue下载量的10倍，可见TypeScript还是非常受欢迎的
 
+# Vue-TypeScript-Cli
+官方虽然明确提出对TypeScript的支持，但是并没有明确的配置文档，自己在配置的时候还是需要查阅很多资料以及踩很多坑的（这个过程真的很蓝瘦-_-）
+
+但是现在可以不用踩这个坑啦，我基于官方的`vue-cli`写了一个[vue-typescript-cli](https://github.com/SimonZhangITer/vue-typescript-template)，可以一键构建TypeScript模板
+
+### 用法
+
+```bash
+vue init SimonZhangITer/vue-typescript-template <project-name>
+```
+
+比如
+
+```bash
+vue init SimonZhangITer/vue-typescript-template my-project
+```
+然后配置好的TypeScript模板就下载到`./my-project`文件夹了，`npm run dev`即可运行
 # TypeScript配置
-本项目已经配置完毕，这里记录一下当时的踩坑过程
+这里记录一下当时的踩坑过程，所有配置已经在[vue-typescript-cli](https://github.com/SimonZhangITer/vue-typescript-template)配置完毕
 
 ## 1. Webpack
+
+#### 安装ts-loader
 首先需要安装`ts-loader`，这是TypeScript为Webpack提供的编译器，类似于`babel-loader`
 
 ```bash
 npm i ts-loader -D
 ```
+
+#### 配置rules
 接着在Webpack的`module.rules`里面添加对ts的支持(我这里的webpack版本是2.x)：
 
 ```javascript
@@ -86,17 +107,20 @@ npm i ts-loader -D
     options: vueLoaderConfig
 },
 {
-    test: /\.tsx?$/,
-    exclude: /node_modules/,
-    use: [
-      "babel-loader",
-      {
-        loader: "ts-loader",
-        options: { appendTsxSuffixTo: [/\.vue$/] }
-      }
-    ]
+    test: /\.ts$/,
+    loader: 'ts-loader',
+    options: {
+      appendTsSuffixTo: [/\.vue$/],
+    }
 }
 ```
+#### 配置extensions
+添加可识别文件后缀对ts的支持，如：
+
+```javascript
+extensions: ['.js', '.vue', '.json', '.ts']
+```
+
 
 ## 2. tsconfig.json
 
