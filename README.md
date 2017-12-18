@@ -345,7 +345,7 @@ export default class modules extends Vue {
 <div align=center>
     <img src="https://p1.meituan.net/dpgroup/ffe7312edf899bdaa71e42ae2cff7293124895.png" width="266"/>
     <img src="https://p1.meituan.net/dpgroup/2ba7ac68cb3bcef937e48a9fcfb64ca7534292.png" width="266"/>
-    <img src="https://p1.meituan.net/dpgroup/e9bd7a0e31f02cb0c7f5699deaccd6ac504928.png" width="266"/>
+    <img src="http://opnxqffe4.bkt.clouddn.com/15135877156970.jpg" width="266"/>
 </div>
 
 # 总结
