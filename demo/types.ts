@@ -22,6 +22,14 @@ let bool: boolean = true
 
 bool = false
 
+
+/**
+ * 类型推断
+ */
+let x = 'test'
+
+// x = 1
+
 /**
  * array
  * 数组
