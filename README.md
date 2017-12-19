@@ -86,7 +86,7 @@ vue init SimonZhangITer/vue-typescript-template my-project
 ```
 然后配置好的TypeScript模板就下载到`./my-project`文件夹了，`npm run dev`即可运行
 # TypeScript配置
-这里记录一下当时的踩坑过程，所有配置已经在[vue-typescript-cli](https://github.com/SimonZhangITer/vue-typescript-template)配置完毕
+这里记录一下当时的踩坑过程，所有配置已经在[vue-typescript-template](https://github.com/SimonZhangITer/vue-typescript-template)配置完毕
 
 ## 1. Webpack
 
